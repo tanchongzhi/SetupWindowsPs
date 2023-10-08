@@ -17,8 +17,8 @@ Disable-ScheduledTask -TaskPath "\Microsoft\Windows\Maintenance\" -TaskName "Win
 Write-Host "Scheduled Tasks : \Microsoft\Windows\Customer Experience Improvement Program\* : Disabled"
 Get-ScheduledTask -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program\" | Disable-ScheduledTask
 
-Write-Host "Scheduled Tasks : \Microsoft\Windows\Application Experience\* : Disabled"
-Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" | Disable-ScheduledTask
+Write-Host "Scheduled Tasks : \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser : Disabled"
+Disable-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -TaskName "Microsoft Compatibility Appraiser"
 
 Write-Host "Scheduled Tasks : \Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector : Disabled"
 Disable-ScheduledTask -TaskPath "\Microsoft\Windows\DiskDiagnostic\" -TaskName "Microsoft-Windows-DiskDiagnosticDataCollector"

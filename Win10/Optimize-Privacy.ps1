@@ -35,6 +35,25 @@ $null = New-ItemProperty -Path $Key -Name UploadUserActivities -Value 0 -Propert
 
 #-----------------------------------------------------------------------------------------------------------------------
 
+Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser : Disabled"
+$null = Disable-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -TaskName "Microsoft Compatibility Appraiser"
+
+Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Customer Experience Improvement Program\* : Disabled"
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program\" | Disable-ScheduledTask
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+Write-Host "Privacy : Windows Feedback Frequency : Never"
+$Key = "HKCU:\SOFTWARE\Microsoft\Siuf\Rules\"
+$null = (Test-Path -Path $Key) -or (New-Item -Path $Key -Force)
+$null = New-ItemProperty -Path $Key -Name NumberOfSIUFInPeriod -Value 0 -PropertyType DWord -Force
+Remove-ItemProperty -Path $Key -Name PeriodInNanoSeconds -Force -ErrorAction SilentlyContinue
+
+Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Feedback\Siuf\* : Disabled"
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Feedback\Siuf\" | Disable-ScheduledTask
+
+#-----------------------------------------------------------------------------------------------------------------------
+
 # $CurrentUserSid = Get-WmiObject -Class win32_computersystem |
 # Select-Object -ExpandProperty Username |
 # ForEach-Object { ([System.Security.Principal.NTAccount]$_).Translate([System.Security.Principal.SecurityIdentifier]).Value }
