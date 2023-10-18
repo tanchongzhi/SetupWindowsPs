@@ -35,8 +35,8 @@ $null = New-ItemProperty -Path $Key -Name UploadUserActivities -Value 0 -Propert
 
 #-----------------------------------------------------------------------------------------------------------------------
 
-Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser : Disabled"
-$null = Disable-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -TaskName "Microsoft Compatibility Appraiser"
+Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Application Experience\* : Disabled"
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" | Disable-ScheduledTask
 
 Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Customer Experience Improvement Program\* : Disabled"
 $null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program\" | Disable-ScheduledTask
