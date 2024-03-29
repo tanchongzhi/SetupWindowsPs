@@ -36,10 +36,21 @@ $null = New-ItemProperty -Path $Key -Name UploadUserActivities -Value 0 -Propert
 #-----------------------------------------------------------------------------------------------------------------------
 
 Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Application Experience\* : Disabled"
-$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" | Disable-ScheduledTask
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -Name "MareBackup" | Disable-ScheduledTask
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -Name "Microsoft Compatibility Appraiser" | Disable-ScheduledTask
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -Name "ProgramDataUpdater" | Disable-ScheduledTask
+$null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -Name "StartupAppTask" | Disable-ScheduledTask
 
 Write-Host "Privacy : Scheduled Tasks: \Microsoft\Windows\Customer Experience Improvement Program\* : Disabled"
 $null = Get-ScheduledTask -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program\" | Disable-ScheduledTask
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+Write-Host "Privacy : Service: Connected User Experiences and Telemetry : Disabled"
+Set-Service -Name "DiagTrack" -StartupType Disabled -Status Stopped -Force
+
+Write-Host "Privacy : Service: Microsoft (R) DiagnosticsHub Standard Collector Service : Disabled"
+Set-Service -Name "diagnosticshub.standardcollector.service" -StartupType Disabled -Status Stopped -Force
 
 #-----------------------------------------------------------------------------------------------------------------------
 
