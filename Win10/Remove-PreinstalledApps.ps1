@@ -1,5 +1,5 @@
 Get-AppxPackage "Microsoft.549981C3F5F10" -AllUsers | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingWeather" -AllUsers | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingWeather" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.GetHelp" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.Getstarted" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.Microsoft3DViewer" -AllUsers | Remove-AppxPackage
@@ -15,14 +15,14 @@ Get-AppxPackage "Microsoft.Wallet" -AllUsers | Remove-AppxPackage
 #Get-AppxPackage "Microsoft.Windows.Photos" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "microsoft.windowscommunicationsapps" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.WindowsFeedbackHub" -AllUsers | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsMaps" -AllUsers | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Xbox*" -AllUsers | Remove-AppxPackage
-Get-AppxPackage "Microsoft.YourPhone" -AllUsers | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsMaps" -AllUsers | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Xbox*" -AllUsers | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.YourPhone" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.ZuneMusic" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.ZuneVideo" -AllUsers | Remove-AppxPackage
 
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.549981C3F5F10" } | Remove-AppxProvisionedPackage -Online -AllUsers
-Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.BingWeather" } | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.BingWeather" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.GetHelp" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.Getstarted" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.Microsoft3DViewer" } | Remove-AppxProvisionedPackage -Online -AllUsers
@@ -37,8 +37,8 @@ Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Micro
 #Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.Windows.Photos" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "microsoft.windowscommunicationsapps" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.WindowsFeedbackHub" } | Remove-AppxProvisionedPackage -Online -AllUsers
-Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.WindowsMaps" } | Remove-AppxProvisionedPackage -Online -AllUsers
-Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.Xbox*" } | Remove-AppxProvisionedPackage -Online -AllUsers
-Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.YourPhone" } | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.WindowsMaps" } | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.Xbox*" } | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.YourPhone" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.ZuneMusic" } | Remove-AppxProvisionedPackage -Online -AllUsers
 Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -ilike "Microsoft.ZuneVideo" } | Remove-AppxProvisionedPackage -Online -AllUsers
